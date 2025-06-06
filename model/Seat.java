@@ -1,15 +1,17 @@
 package model;
 
-public class Seat implements Comparable<Seat> {
+public class Seat {
     private int id;
     private String row;
-    private int number;
+    private String number;
+    private int venueId;
 
 
-    public Seat(int id, String row, int number) {
+    public Seat(int id, String row, String number, int venueId) {
         this.id = id;
         this.row = row;
         this.number = number;
+        this.venueId = venueId;
     }
 
     public int getId() {
@@ -20,17 +22,9 @@ public class Seat implements Comparable<Seat> {
         return row;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
 
-
-    @Override
-    public int compareTo(Seat other) {
-        if (this.row.equals(other.row)) {
-            return Integer.compare(this.number, other.number);
-        }
-        return this.row.compareTo(other.row);
-    }
 }
